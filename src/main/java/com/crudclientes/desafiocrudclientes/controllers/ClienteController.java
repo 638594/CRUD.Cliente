@@ -38,4 +38,10 @@ public class ClienteController {
                 .buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        clienteService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
