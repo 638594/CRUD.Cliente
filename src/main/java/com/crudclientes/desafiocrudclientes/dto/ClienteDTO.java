@@ -11,11 +11,11 @@ import java.time.LocalDate;
 public class ClienteDTO {
 
     private Long id;
-    @NotBlank
+    @NotBlank(message = "Campo Necessario")
     private String name;
     private String cpf;
     private Double income;
-    @PastOrPresent
+    @PastOrPresent(message = "Data invalida")
     private LocalDate birthDate;
     private Integer children;
 
